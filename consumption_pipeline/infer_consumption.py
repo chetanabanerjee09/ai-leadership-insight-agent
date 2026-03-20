@@ -1,6 +1,7 @@
 import argparse
 import logging
 import sys
+from pathlib import Path
 
 logging.basicConfig(
     level=logging.WARNING,
@@ -88,11 +89,12 @@ def main() -> None:
 
     # Optional: save context for debugging
     if args.save_context:
-        with open("retrieved_context.txt", "w", encoding="utf-8") as f:
+        context_path = Path(__file__).resolve().parent.parent / "retrieved_context.txt"
+        with open(context_path, "w", encoding="utf-8") as f:
             for i, c in enumerate(chunks, 1):
                 f.write(f"--- Chunk {i} | Page {c['page_number']} | Score {c['score']:.4f} ---\n")
                 f.write(c["text"].strip() + "\n\n")
-        logger.info("Saved retrieved context to retrieved_context.txt")
+        logger.info(f"Saved retrieved context to {context_path}")
 
     engine     = EnginePipeline()
     plot_path  = None
@@ -108,8 +110,9 @@ def main() -> None:
 
     # ---- Step 4: generate plot if decision says yes ----------------------
     if decision:
-        # Pure Python / matplotlib — LLM never touches plotting code
-        plot_path = generate_plot(decision, output_dir=args.plot_dir)
+        # Resolve plot_dir relative to project root so it works from any cwd
+        plot_dir = str(Path(__file__).resolve().parent.parent / args.plot_dir)
+        plot_path = generate_plot(decision, output_dir=plot_dir)
         if plot_path:
             logger.info(f"Plot saved to: {plot_path}")
         else:

@@ -27,6 +27,7 @@ def generate_plot(decision: Dict[str, Any], output_dir: str = ".") -> Optional[s
     None — if plotting fails
     """
     try:
+        os.environ["MPLBACKEND"] = "Agg"  # override any Jupyter backend set in env
         import matplotlib
         matplotlib.use("Agg")   # non-interactive backend — safe for scripts
         import matplotlib.pyplot as plt
