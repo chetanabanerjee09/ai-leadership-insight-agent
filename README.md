@@ -4,7 +4,7 @@
 
 An AI-powered assistant that helps leadership understand the current status, performance, and strategic position of the organization — grounded entirely in internal company documents.
 
-> **For a quick demo and testing, see the Colab notebook:** [`demo.ipynb`](demo.ipynb)
+> **For a quick demo and  testing, see the Colab notebook:** [`demo.ipynb`](demo.ipynb)
 
 ---
 
