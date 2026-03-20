@@ -120,7 +120,7 @@ export MILVUS_TOKEN=your_zilliz_milvus_token
 
 ## Running the Creation Pipeline (Ingest Documents)
 
-Place your PDF files in the `inputs/` folder, then run from the **RAG root**:
+Place your PDF files in the `inputs/` folder, then run:
 
 ```bash
 python creation_pipeline/infer_creation.py \
@@ -175,7 +175,7 @@ python creation_pipeline/infer_creation.py \
 
 ## Running the Consumption Pipeline (Ask Questions)
 
-Run from the **RAG root**. Use the **same** `client_id` and `project_id` as ingestion:
+Use the **same** `client_id` and `project_id` as ingestion:
 
 ```bash
 python consumption_pipeline/infer_consumption.py \
