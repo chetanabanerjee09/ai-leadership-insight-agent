@@ -184,7 +184,7 @@ Use the **same** `client_id` and `project_id` as ingestion:
 
 ```bash
 python consumption_pipeline/infer_consumption.py \
-  --question "What was Adobe's total revenue in 2024?" \
+  --question "What is Adobe's Digital Media Annualized Recurring Revenue (ARR) at the end of fiscal 2024, and how is it composed?" \
   --client_id adobe \
   --project_id annual_report
 ```
@@ -192,7 +192,7 @@ python consumption_pipeline/infer_consumption.py \
 **With a chart (auto-decided):**
 ```bash
 python consumption_pipeline/infer_consumption.py \
-  --question "Show me Adobe's revenue trend across 2024 quarters" \
+  --question "Compare Adobe's subscription revenue by segment (Digital Media, Digital Experience, Publishing & Advertising) for fiscal 2024." \
   --client_id adobe \
   --project_id annual_report \
   --plot_dir plots
@@ -201,7 +201,7 @@ python consumption_pipeline/infer_consumption.py \
 **Save retrieved context for debugging:**
 ```bash
 python consumption_pipeline/infer_consumption.py \
-  --question "What are Adobe's main product segments?" \
+  --question "What is Adobe Firefly and how does it fit into Adobe's AI strategy across Creative Cloud and Document Cloud" \
   --client_id adobe \
   --project_id annual_report \
   --save_context
