@@ -83,22 +83,27 @@ RAG/
 
 ## Setup
 
-### 1. Create a conda environment
+### 1. Clone the repository
 
 ```bash
-cd RAG
+git clone https://github.com/chetanabanerjee09/ai-leadership-insight-agent.git
+cd ai-leadership-insight-agent
+```
 
+### 2. Create a conda environment
+
+```bash
 conda create --name rag_project python=3.10
 conda activate rag_project
 ```
 
-### 2. Install dependencies
+### 3. Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Set environment variables
+### 4. Set environment variables
 
 These are **required**:
 
@@ -108,7 +113,7 @@ export MILVUS_URI=your_zilliz_milvus_uri
 export MILVUS_TOKEN=your_zilliz_milvus_token
 ```
 
-### 4. Zilliz Cloud Setup
+### 5. Zilliz Cloud Setup
 
 1. Sign up at [cloud.zilliz.com](https://cloud.zilliz.com) — free serverless tier available
 2. Create a **Serverless** cluster
