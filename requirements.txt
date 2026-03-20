@@ -1,0 +1,17 @@
+# RAG Pipeline Dependencies
+# Install with: pip install -r requirements.txt
+
+# Google Gemini SDK — LLM chunking, question generation, embeddings
+google-genai>=1.62.0
+
+# Milvus vector database client (compatible with Milvus 2.6.x and Zilliz Cloud)
+pymilvus>=2.6.0
+
+# PDF text extraction
+pymupdf>=1.27.2
+
+# YAML config parsing
+pyyaml>=6.0.3
+
+# Plot/chart generation for consumption pipeline
+matplotlib>=3.10.0

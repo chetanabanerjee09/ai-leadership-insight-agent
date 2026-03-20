@@ -1,0 +1,33 @@
+# =============================================================================
+# RAG Pipeline Configuration
+# =============================================================================
+# This file contains ONLY non-sensitive settings (model names, sizes).
+#
+# Set secrets as environment variables before running:
+#   export GEMINI_API_KEY=your_key_here
+#   export MILVUS_URI=your_zilliz_uri        
+#   export MILVUS_TOKEN=your_zilliz_token    
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
+gemini:
+  chunking_model: gemini-2.0-flash-001      # used in llm_chunking.py
+  question_model: gemini-2.0-flash-001      # used in question_generator.py
+  embedding_model: gemini-embedding-001     # used in embedding.py
+  generation_model: gemini-2.0-flash-001    # used in generation.py
+  embedding_dim: 3072
+  max_concurrent_requests: 30
+  embedding_batch_size: 50
+
+# -----------------------------------------------------------------------------
+
+milvus:
+  collection_name: rag_collection
+  batch_size: 500
+
+# -----------------------------------------------------------------------------
+# Retrieval
+# -----------------------------------------------------------------------------
+retrieval:
+  top_k: 20
